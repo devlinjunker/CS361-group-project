@@ -25,7 +25,7 @@
 <script src="https://apis.google.com/js/client.js"></script>
 	<form id="book_donate" name="Book Donation" method="post" action="">
 		
-		<p>All fields required.</p>
+		<p>All fields required.</p><!-- TEST GIT -->
 		
 		<fieldset>
 			<legend>Book Information</legend>
