@@ -51,7 +51,7 @@ function validateForm()
 	}
 </script>
 <script src="https://apis.google.com/js/client.js"></script>
-	<form id="book_request" name="Book Request" method="post" action="<?php echo $sitepath; ?>requestbook.php" onsubmit="return validateForm()">
+	<form id="book_request" name="Book Request" method="post" action="bookrequest.php" onsubmit="return validateForm()">
 		
 		<p>Fields with * are required.</p>
 		
@@ -59,13 +59,13 @@ function validateForm()
 			<legend>Book Information</legend>
 			<label for="book_isbn">*ISBN:</label>
 			<input name="book_isbn" type="text" id="book_isbn" tabindex="1" autofocus required />
-			<button type="button" onclick="load()">Auto Filll</button>
+			<button type="button" onclick="load()" tabindex="2">Auto Fill</button>
 
 			<label for="book_name">Book Name:</label>
-			<input type="text" name="book_name" id="book_name" tabindex="2" disabled="disabled"/>
+			<input type="text" name="book_name" id="book_name" disabled="disabled"/>
 			
 			<label for="book_author">Author:</label>
-			<input type="text" name="book_author" id="book_author" tabindex="3" disabled="disabled" />
+			<input type="text" name="book_author" id="book_author" disabled="disabled" />
 
 		</fieldset>
 		<fieldset>
