@@ -104,7 +104,10 @@ h2 {
 	padding-top:20px;
 	padding-bottom:15px;
 }
-h3 {}
+h3 {
+	font-size:26px;
+	margin-top:15px;
+}
 h4 {}
 h5 {}
 h6 {}
@@ -259,4 +262,22 @@ input#autofill {
 	display:inline;
 	width:100px; 
 	margin-left:5px;
+}
+
+div#userinfo, div#donatedbooks, div#requestedbooks {
+	width: 500px;
+	margin:0 auto;
+}
+
+div#userinfo p {
+	padding-left:30px;
+	margin-top:3px;
+}
+
+div#donatedbooks table, div#requestedbooks table {
+	padding-left:30px;
+}
+
+div#donatedbooks table tr td, div#requestedbooks table tr td {
+	padding:0 7px;
 }
