@@ -11,6 +11,8 @@
 	$name = mysql_real_escape_string($_POST['book_name']);
 	$note = mysql_real_escape_string($_POST['book_reason']);
 	
+	echo $name;
+	
 	$sql = "INSERT INTO `bookrequests` (`accountid`, `isbn`, `message`, `date`) 
 			VALUES ($USERID, '$isbn', '$note', '".date("Y-m-d", time())."')";
 			
