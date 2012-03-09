@@ -3,8 +3,7 @@
 <?php include '../header.html' ?>
 
 <h2><?php echo $sitepage; ?></h2>
-
-	<form name="create_account" method="post" action="" onclick='form[name="create_account"]'>
+	<form name="create_account" method="post" action="make_account.php" onclick='form[name="create_account"]'>
 		
 		<fieldset class="create">
 			<legend>User Information</legend>

@@ -63,7 +63,7 @@
 			<input name="username" type="text" tabindex="1" autofocus required />
 			
 			<label for="password">Password:</label>
-			<input type="text" name="password" tabindex="2" required/>
+			<input type="password" name="password" tabindex="2" required/>
 		</fieldset>
 		
 		<fieldset id="login">
