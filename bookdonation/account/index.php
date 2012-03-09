@@ -1,16 +1,40 @@
-<!--<?php include "../log.php";?>-->
+<!--<?php include "../log.php";?> -->
 
 <?php $sitepage = "Account"; ?>
 
 <?php include '../header.html' ?>
 
 <h2><?php echo $sitepage; ?></h2>
+<script type="text/javascript">
+
+
+	function makerequest() {
+		$('tr.book').find('td#isbn').each(function(){
+			var isbn = $(this).val();
+			var url = "books/v1/volumes?q=isbn:" + isbn;
+			var request = gapi.client.request({'path': url});
+			request.execute(function(result) {
+				var book = result.items[0];
+				
+				$(this).siblings('td#name').val(book.volumeInfo.title);
+				
+			});
+		});		
+	}
+	
+$(document).ready(function(){
+		gapi.client.setApiKey("AIzaSyBJd1OdD6aCx91QSuQ2_beoM15g0ESyr1Q");
+		gapi.client.load("books", "v1", makerequest);
+});
+</script>
+<script src="https://apis.google.com/js/client.js"></script>
+
 
 <?php
 
 	include '../connect.php';
 	
-//	$username = $_COOKIE['username'];
+	//$username = $_COOKIE['username'];
 	
 	
 	$query_account = "SELECT accountid, name, email, address, paypal
@@ -35,6 +59,7 @@
 	<h3>Donated Books</h3>
 	<table>
 		<tr>
+			<th>ISBN</th>
 			<th>Book Name</th>
 			<th>Condition</th>
 			<th>Availability</th>
@@ -49,8 +74,9 @@
 	while($result_don = mysql_fetch_array($result_donation)) { 
 		$isbn = $result_don[2];  ?>
 		
-		<tr>
-			<td><?php echo $isbn; ?></td>
+		<tr class='book'>
+			<td id='isbn'><?php echo $result_don[2]; ?></td>
+			<td id='name'></td>
 			<td><?php echo $result_don[1]; ?></td>
 			<td><?php 
 					switch($result_don[0]) {
@@ -72,6 +98,7 @@
 	<h3>Requested Books</h3>
 	<table>
 		<tr>
+			<th>ISBN</th>
 			<th>Book Name</th>
 			<th>Date</th>
 			<th>Message</th>
@@ -87,10 +114,11 @@
 	$result_donation = mysql_query($query_donation, $mysql_handle);
 		
 	while($result_don = mysql_fetch_array($result_donation)) { 
-		$isbn = $result_don[0];  ?>
+		$isbn = $result_don[0]; ?>
 		
-		<tr>
-			<td><?php echo $isbn; ?></td>
+		<tr class='book'>
+			<td id='isbn'><?php echo $isbn; ?></td>
+			<td id='name'> Book name </td>
 			<td><?php echo $result_don[1]; ?></td>
 			<td><?php echo $result_don[2]; ?></td>
 			<td><?php switch($result_don[3]) {
