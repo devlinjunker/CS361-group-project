@@ -37,7 +37,7 @@ function load(){
 
 	include '../connect.php';
 	
-	//$username = $_COOKIE['username'];
+	$username = $_COOKIE['username'];
 	
 	
 	$query_account = "SELECT accountid, name, email, address, paypal
