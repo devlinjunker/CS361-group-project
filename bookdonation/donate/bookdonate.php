@@ -21,7 +21,7 @@
 	$result = mysql_query($sql, $mysql_handle);
 	
 	if($result == 1){
-		echo "<div id='message'> Succesfully Donated Book... <a href='../account'> Return to Account Here</a></div>";
+		echo "<p id='message'> Succesfully Donated Book... <a href='../account'> Return to Account Here</a></p>";
 		
 		header('refresh: 5; url=../account');
 	}else{
