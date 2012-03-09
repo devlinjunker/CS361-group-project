@@ -42,6 +42,13 @@ function validateForm()
 				var book = result.items[0];
 				document.forms["Book Request"]["book_name"].value = book.volumeInfo.title;
 				document.forms["Book Request"]["book_author"].value = book.volumeInfo.authors;
+				
+				$.post(
+					'newbook.php',
+					{isbn: document.forms["Book Request"]["book_isbn"].value,
+					name: book.volumeInfo.title,
+					author: book.volumeInfo.authors}
+				);
 			});
 	}
 
