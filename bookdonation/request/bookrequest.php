@@ -3,11 +3,7 @@
 	include "../log.php";
 	
 	
-	echo "<style> #message{
-	position:relative;
-	left:200px;
-	top:50px;
-	}</style>";
+	echo "<style> </style>";
 	
 	$sitepage = "Request";
 	
@@ -25,7 +21,7 @@
 		
 		header('refresh: 5; url=../account');
 	}else{
-		
+		echo "<div id='message'> Error Adding Your Request </div>";
 	}
 	
 ?>
