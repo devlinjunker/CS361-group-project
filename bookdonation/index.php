@@ -37,7 +37,7 @@
 <div id="wrapper">	
 
 	<header>
-		<h1><a href="http://llosi.com/cs361/bookdonation/">Textbookie</a></h1>
+		<h1><a href="http://web.engr.oregonstate.edu/~junkerd/CS361/bookdonation/">Textbookie</a></h1>
 	</header>
 		
 	<nav id="menuhorizontal">
