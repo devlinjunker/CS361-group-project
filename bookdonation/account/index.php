@@ -5,9 +5,12 @@
 <?php include '../header.html' ?>
 
 <h2><?php echo $sitepage; ?></h2>
+<script src="https://apis.google.com/js/client.js?onload=load"></script>
 <script type="text/javascript">
 
 $(document).ready(load());
+
+
 	function makerequest() {
 		$('tr.book').find('td#isbn').each(function(){
 			var isbn = $(this).val();
@@ -27,7 +30,7 @@ function load(){
 		gapi.client.load("books", "v1", makerequest);
 }
 </script>
-<script src="https://apis.google.com/js/client.js?onload=load"></script>
+
 
 
 <?php
