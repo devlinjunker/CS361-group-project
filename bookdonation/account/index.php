@@ -5,7 +5,7 @@
 <?php include '../header.html' ?>
 
 <h2><?php echo $sitepage; ?></h2>
-<script src="https://apis.google.com/js/client.js?onload=load"></script>
+<script src="https://apis.google.com/js/client.js"></script>
 <script type="text/javascript">
 
 $(document).ready(load());
