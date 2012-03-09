@@ -41,7 +41,7 @@ function makerequest() {
 	
 	
 	$query_account = "SELECT accountid, name, email, address, paypal
-		      			FROM accounts WHERE name = 'test'";
+		      			FROM accounts WHERE name ='$username'";
 						
 	$result_account = mysql_query($query_account, $mysql_handle);
 	
