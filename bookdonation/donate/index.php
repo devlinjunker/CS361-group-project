@@ -23,7 +23,7 @@
 	}
 </script>
 <script src="https://apis.google.com/js/client.js"></script>
-	<form id="book_donate" name="Book Donation" method="post" action="">
+	<form id="book_donate" name="Book Donation" method="post" action="bookdonate.php">
 		
 		<p>All fields required.</p><!-- TEST GIT -->
 		
