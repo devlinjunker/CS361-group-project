@@ -1,13 +1,7 @@
 <?php  
 	include '../header.html';
 	include "../log.php";
-	
-	
-	echo "<style> #message{
-	position:relative;
-	left:200px;
-	top:50px;
-	}</style>";
+
 	
 	$sitepage = "Donate";
 	
