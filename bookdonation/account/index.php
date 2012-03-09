@@ -5,31 +5,7 @@
 <?php include '../header.html' ?>
 
 <h2><?php echo $sitepage; ?></h2>
-<script src="https://apis.google.com/js/client.js"></script>
-<script type="text/javascript">
 
-$(document).ready(function(){
-	gapi.client.setApiKey("AIzaSyBJd1OdD6aCx91QSuQ2_beoM15g0ESyr1Q");
-	gapi.client.load("books", "v1", makerequest);
-});
-
-
-function makerequest() {
-	$('tr.book').find('td#isbn').each(function(){
-		var isbn = $(this).val();
-		var url = "books/v1/volumes?q=isbn:" + isbn;
-		var request = gapi.client.request({'path': url});
-		request.execute(function(result) {
-			var book = result.items[0];
-			
-			$(this).siblings('td#name').val(book.volumeInfo.title);
-			
-		});
-	});		
-}
-	
-
-</script>
 
 
 
@@ -78,7 +54,7 @@ function makerequest() {
 		$isbn = $result_don[2];  ?>
 		
 		<tr class='book'>
-			<td id='isbn'><?php echo $result_don[2]; ?></td>
+			<td id='isbn' isbn='<?php echo $result_don[2]; ?>'><?php echo $result_don[2]; ?></td>
 			<td id='name'></td>
 			<td><?php echo $result_don[1]; ?></td>
 			<td><?php 
@@ -120,7 +96,7 @@ function makerequest() {
 		$isbn = $result_don[0]; ?>
 		
 		<tr class='book'>
-			<td id='isbn'><?php echo $isbn; ?></td>
+			<td id='isbn' isbn='<?php echo $isbn; ?>'><?php echo $isbn; ?></td>
 			<td id='name'> Book name </td>
 			<td><?php echo $result_don[1]; ?></td>
 			<td><?php echo $result_don[2]; ?></td>
