@@ -15,7 +15,9 @@
 	$name = mysql_real_escape_string($_POST['book_name']);
 	$condition = mysql_real_escape_string($_POST['book_condition2']);
 	switch($_POST['RadioGroup1']){
-		case "book_nextuser":
+	case "book_listuser":
+			include("choose_user.php");
+	case "book_nextuser":
 			$sql = "INSERT INTO  `junkerd-db`.`bookdonations` (`donationid` ,`isbn` ,`accountid` ,`condition` ,`available`)VALUES (NULL ,  '$isbn',  '$USERID',  '$condition',  '0')";
 	
 			#echo $sql;	
@@ -29,9 +31,6 @@
 			}else{
 				break;	
 			}
-		case "book_listuser":
-			include("choose_user.php");
-			break;
 		default:
 			break;
 	}			
