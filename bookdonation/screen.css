@@ -74,6 +74,7 @@ a.menu:hover {
 section {
 	min-height:500px;
 	background-image:url(pictures/section2.jpg);
+	padding-bottom:50px;
 }
 article {}
 aside {}
