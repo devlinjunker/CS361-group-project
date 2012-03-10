@@ -17,7 +17,9 @@
 <?php
 	$query_donation = "SELECT  `available` ,  `condition` ,  `bookdonations`.`isbn`, `name`
 						FROM  bookdonations, books
-						WHERE bookdonations.isbn = books.isbn" ;
+						WHERE bookdonations.isbn = books.isbn
+						GROUP BY available
+						ORDER BY available DESC, name DESC";
 
 	$result_donation = mysql_query($query_donation, $mysql_handle);
 		

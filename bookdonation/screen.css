@@ -281,3 +281,12 @@ div#donatedbooks table, div#requestedbooks table {
 div#donatedbooks table tr td, div#requestedbooks table tr td {
 	padding:0 7px;
 }
+
+table#booklist {
+	width:600px;
+	margin:0 auto;
+}
+
+table#booklist tr {
+	padding-bottom:3px;
+}
