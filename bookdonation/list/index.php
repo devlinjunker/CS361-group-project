@@ -43,4 +43,6 @@
 
 <?php	} ?>
 
+	</table>
+
 <?php include '../footer.html' ?>
