@@ -56,7 +56,7 @@
 			<td><?php echo $result_don['condition']; ?></td>
 			<td><?php 
 					switch($result_don['available']) {
-						case 0:
+						case 1:
 							echo 'yes';
 							break;
 						default:
