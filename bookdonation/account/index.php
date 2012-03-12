@@ -44,9 +44,9 @@
 			<th>Availability</th>
 		</tr>
 <?php
-	$query_donation = "SELECT  `available` ,  `condition` ,  `isbn` 
-						FROM  `bookdonations` 
-						WHERE accountid = " .$acc_id;
+	$query_donation = "SELECT  `available` ,  `condition` ,  `books`.`isbn`, `name` 
+						FROM  `bookdonations`, `books` 
+						WHERE `books`.`isbn`=`bookdonations`.`isbn` AND accountid = " .$acc_id;
 
 	$result_donation = mysql_query($query_donation, $mysql_handle);
 		
@@ -54,11 +54,11 @@
 		$isbn = $result_don[2];  ?>
 		
 		<tr class='book'>
-			<td id='isbn' isbn='<?php echo $result_don[2]; ?>'><?php echo $result_don[2]; ?></td>
-			<td id='name'></td>
-			<td><?php echo $result_don[1]; ?></td>
+			<td id='isbn' ><?php echo $result_don['isbn']; ?></td>
+			<td id='name'><?php echo $result_don['name']; ?></td>
+			<td><?php echo $result_don['condition']; ?></td>
 			<td><?php 
-					switch($result_don[0]) {
+					switch($result_don['available']) {
 						case 0:
 							echo 'yes';
 							break;
@@ -86,21 +86,21 @@
 			<th>Returned</th>
 		</tr>
 <?php
-	$query_donation = "SELECT  isbn, date, message, sent, received, returned
-						FROM  bookrequests 
-						WHERE accountid = " .$acc_id;
+	$query_donation = "SELECT  books.isbn, date, message, sent, received, returned, name
+						FROM  bookrequests , books
+						WHERE bookrequests.isbn=books.isbn AND accountid = " .$acc_id;
 
 	$result_donation = mysql_query($query_donation, $mysql_handle);
 		
 	while($result_don = mysql_fetch_array($result_donation)) { 
-		$isbn = $result_don[0]; ?>
+		?>
 		
 		<tr class='book'>
-			<td id='isbn' isbn='<?php echo $isbn; ?>'><?php echo $isbn; ?></td>
-			<td id='name'> Book name </td>
-			<td><?php echo $result_don[1]; ?></td>
-			<td><?php echo $result_don[2]; ?></td>
-			<td><?php switch($result_don[3]) {
+			<td id='isbn' ><?php echo $result_don['isbn']; ?></td>
+			<td id='name'><?php echo $result_don['name']; ?></td>
+			<td><?php echo $result_don['date']; ?></td>
+			<td><?php echo $result_don['message']; ?></td>
+			<td><?php switch($result_don['sent']) {
 						case 0:
 							echo 'yes';
 							break;
@@ -108,7 +108,7 @@
 							echo 'no';
 					}
 				?></td>
-			<td><?php switch($result_don[4]) {
+			<td><?php switch($result_don['received']) {
 						case 0:
 							echo 'yes';
 							break;
@@ -116,7 +116,7 @@
 							echo 'no';
 					}
 				?></td>
-			<td><?php switch($result_don[5]) {
+			<td><?php switch($result_don['returned']) {
 						case 0:
 							echo 'yes';
 							break;
