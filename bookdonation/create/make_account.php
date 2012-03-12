@@ -1,4 +1,5 @@
 <?php
+header( "Location: $landingpage");
 	include '../header.html';
 	include "../log.php";
 
@@ -31,8 +32,8 @@
 	if($success === true){
 		setcookie("username",$username,time()+86400);
 		setcookie("pwd",$password, time()+86400);
-		header( "Location: $landingpage");
 		echo "<div id='message'> Succesfully Log-in... <a href='../account'> Return to Account Here</a></div>";
+		header( "Location: $landingpage");
 	}
 	else{
 		header("Location: $create?error=0");
