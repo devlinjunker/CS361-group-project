@@ -5,7 +5,6 @@
 
 <h2><?php echo $sitepage; ?></h2>
 
-	<h3>Availability</h3>
 	<table id="booklist">
 		<tr>
 			<th>ISBN</th>
