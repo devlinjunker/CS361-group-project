@@ -1,4 +1,7 @@
 <?php
+	include '../header.html';
+	include "../log.php";
+
 	include("../connect.php");
 	$landingpage = "../index.php";
 	$create = "index.php";
@@ -22,9 +25,9 @@
 		header( "Location:$create?error=2");
 	}
 	$query = "INSERT INTO accounts (name, password, address, email, paypal) VALUES('$username','$password','$address','$email','$paypal')";
-	echo $query;
+	#echo $query;
 	$success = mysql_query($query,$mysql_handle);
-	echo $success;
+	#echo $success;
 	if($success === true){
 		setcookie("username",$username,time()+86400);
 		setcookie("pwd",$password, time()+86400);
@@ -36,3 +39,4 @@
 	}	
 	
 ?>	
+<?php include '../footer.html' ?>

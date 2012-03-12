@@ -54,11 +54,12 @@ ul.horizontal {
 ul.horizontal li {
     display: inline-block;
     text-align: center;
+	width: 15%;
 }
 
 a.menu:link, a.menu:visited, a.menu:active {
 	font-size:22px;
-	width:19%;
+	width:100%;
 	padding:2px 0;
 	display:block;
 	text-decoration:none;

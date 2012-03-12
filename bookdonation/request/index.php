@@ -47,7 +47,7 @@ function validateForm()
 					'newbook.php',
 					{isbn: document.forms["Book Request"]["book_isbn"].value,
 					name: book.volumeInfo.title,
-					author: book.volumeInfo.authors}
+					author: book.volumeInfo.authors[0]}
 				);
 			});
 	}
