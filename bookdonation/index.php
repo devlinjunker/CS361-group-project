@@ -1,4 +1,10 @@
-<?php $sitepage = "Login"; ?>
+<?php $sitepage = "Login"; 
+
+if($_GET['action'] == 'logout'){
+	setcookie('username', 'none', time()-3600, '/');
+	setcookie('password', 'none', time()-3600, '/');
+}
+?>
 
 	<!DOCTYPE html>
 	<html xmlns="http://www.w3.org/1999/xhtml">

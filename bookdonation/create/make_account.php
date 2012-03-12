@@ -1,8 +1,4 @@
 <?php
-header( "Location: $landingpage");
-	include '../header.html';
-	include "../log.php";
-
 	include("../connect.php");
 	$landingpage = "../index.php";
 	$create = "index.php";
@@ -26,18 +22,17 @@ header( "Location: $landingpage");
 		header( "Location:$create?error=2");
 	}
 	$query = "INSERT INTO accounts (name, password, address, email, paypal) VALUES('$username','$password','$address','$email','$paypal')";
-	#echo $query;
+	echo $query;
 	$success = mysql_query($query,$mysql_handle);
-	#echo $success;
+	echo $success;
 	if($success === true){
-		setcookie("username",$username,time()+86400);
-		setcookie("pwd",$password, time()+86400);
+		setcookie("username",$username,time()+86400, '/');
+		setcookie("pwd",$password, time()+86400, '/');
+		header( "Location: ../account/index.php");
 		echo "<div id='message'> Succesfully Log-in... <a href='../account'> Return to Account Here</a></div>";
-		header( "Location: $landingpage");
 	}
 	else{
 		header("Location: $create?error=0");
 	}	
 	
 ?>	
-<?php include '../footer.html' ?>

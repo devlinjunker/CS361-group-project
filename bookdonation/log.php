@@ -25,9 +25,6 @@ if($_GET['action'] == "login") {
 		header("Location: ../index.php?login=failed&cause=".urlencode('Invalid User'));
 		exit;
 	}
-}else if($_GET['action'] == 'logout'){
-	setcookie('username', '', time()-3600);
-	setcookie('password', '', time()-3600);
 }else if(isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
 	$USERNAME = $_COOKIE['username'];
 	$result = mysql_query("SELECT * FROM accounts WHERE name='$USERNAME'");
