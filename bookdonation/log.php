@@ -15,6 +15,7 @@ if($_GET['action'] == "login") {
 			setcookie('username', $_POST['username'], time()+86400, '/');
 			setcookie('password', md5($PWD), time()+84600, '/');
 			$USERID=$data['accountid'];
+			header("Refresh:0; URL: index.php");
 			
 		} else {
 			header("Location: ../index.php?login=failed&cause=".urlencode('Wrong Password'));

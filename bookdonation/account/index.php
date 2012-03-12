@@ -10,14 +10,11 @@
 
 
 <?php
-
-	include '../connect.php';
 	
-	$username = $_COOKIE['username'];
 	
 	
 	$query_account = "SELECT accountid, name, email, address, paypal
-		      			FROM accounts WHERE name ='$username'";
+		      			FROM accounts WHERE accountid ='$USERID'";
 						
 	$result_account = mysql_query($query_account, $mysql_handle);
 	
