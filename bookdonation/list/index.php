@@ -4,15 +4,17 @@
 <?php include '../header.html' ?>
 
 <h2><?php echo $sitepage; ?></h2>
+	
+	<div id ='booklist'>
+		<h3>Availabile Books</h3>
+		<table style='width:100%'>
+			<tr>
+				<th>ISBN</th>
+				<th>Title</th>
+				<th>Condition</th>
+				<th>Available</th>
+			</tr>
 
-	<h3>Availability</h3>
-	<table id="booklist">
-		<tr>
-			<th>ISBN</th>
-			<th>Title</th>
-			<th>Condition</th>
-			<th>Available</th>
-		</tr>
 
 <?php
 	$query_donation = "SELECT  `available` ,  `condition` ,  `bookdonations`.`isbn`, `name`
@@ -43,6 +45,6 @@
 
 <?php	} ?>
 
-	</table>
-
+		</table>
+	</div>
 <?php include '../footer.html' ?>

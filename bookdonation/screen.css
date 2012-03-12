@@ -267,8 +267,8 @@ input#autofill {
 	margin-left:5px;
 }
 
-div#userinfo, div#donatedbooks, div#requestedbooks {
-	width: 700px;
+div#userinfo, div#donatedbooks, div#requestedbooks, div#booklist{
+	width: 80%;
 	margin:0 auto;
 }
 
@@ -279,17 +279,22 @@ div#userinfo p {
 
 div#donatedbooks table, div#requestedbooks table {
 	padding-left:30px;
+	width:80%;
 }
 
 div#donatedbooks table tr td, div#requestedbooks table tr td {
 	padding:0 7px;
 }
 
-table#booklist {
-	width:600px;
-	margin:0 auto;
+table#boooklist {
+	width:100%;
+	margin:30px;
 }
 
 table#booklist tr {
 	padding-bottom:3px;
+}
+
+div#logout a{
+	float:right;
 }

@@ -44,8 +44,9 @@
 			<li><a class="menu" href="<?php echo $sitepath; ?>request">Request</a></li>
 			<li><a class="menu" href="<?php echo $sitepath; ?>donate">Donate</a></li>
 			<li><a class="menu" href="<?php echo $sitepath; ?>list">Book List</a></li>
-			<li><a class="menu" href="<?php echo $sitepath; ?>about">About</a></li>
+			<li><a class="menu" href="<?php echo $sitepath; ?>about">About</a></li> 
 		</ul>
 	</nav>
 		
 <section>
+<?php if(isset($_COOKIE['username'])){ echo "<div id='logout'><a href='../index.php?action=logout'>Logout</a></div>";} ?>
